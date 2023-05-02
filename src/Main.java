@@ -1,37 +1,37 @@
 import java.util.Scanner;
-public class Main {
-    private Professor professor =new Professor();
+public class  Main {
+
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
+        add();
         telaInicial();
 
-    }
-    private void add(){
-        Professor professor =new Professor();
-        professor.setSenha("123");
-        Professor.listaProfessor.add(professor);
 
     }
+   public static void add(){
+        Professor professor = new Professor("123");
+        Professor.adicionar(professor);
+
+
+    }
+
     public static void telaInicial(){
-        int i=1;
-        do {
+        int cont = 3;
+        while (cont > 0) {
             System.out.println("Informe a senha: ");
             String senha = sc.next();
             boolean verificar = Professor.verificar(senha);
             if (verificar) {
                 menu();
-
+                return;
             } else {
-                int cont = 1;
-                System.out.println("senha incorreta");
-                cont++;
-                if (cont == 3) {
-                    System.exit(0);
-                }
+                System.out.println("Senha incorreta. Tentativas restantes: " + (--cont));
             }
-        }while(i==0);
-
+        }
+        System.out.println("Número de tentativas excedido. Encerrando programa.");
+        System.exit(0);
     }
+
 
     public static void menu(){
         System.out.println("""

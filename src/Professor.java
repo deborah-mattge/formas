@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Professor {
     private String senha;
-    static ArrayList<Professor> listaProfessor = new ArrayList<>();
+    private static ArrayList<Professor> listaProfessor = new ArrayList<>();
 
-    public void Professor(String senha) {
+    public  Professor(String senha) {
         this.senha = senha;
 
     }
@@ -18,18 +18,29 @@ public class Professor {
         this.senha = senha;
     }
 
+    public static void adicionar(Professor professor){
+        listaProfessor.add(professor);
+    }
+
+
+
     public static boolean verificar(String senhaDigitada) {
-        System.out.println(listaProfessor);
+        boolean login =true;
         for (Professor professor : listaProfessor) {
-            System.out.println(listaProfessor);
-            if (professor.senha == senhaDigitada) {
-                return true;
+
+            if (professor.senha.equals(senhaDigitada)) {
+                login=true;
+                return login;
+
+            }else{
+                login=false;
+
 
             }
         }
 
 
-        return false;
+        return login;
     }
 }
 
