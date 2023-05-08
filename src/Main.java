@@ -25,7 +25,7 @@ public class  Main {
             boolean verificar = Professor.verificar(senha);
             if (verificar) {
                 menu();
-                return;
+                cont=3;
             } else {
                 System.out.println("Senha incorreta. Tentativas restantes: " + (--cont));
             }
@@ -88,9 +88,10 @@ public class  Main {
             double lado2= sc.nextDouble();
             System.out.println("Informe o lado 3 do triangulo: ");
             double lado3= sc.nextDouble();
-            Triangulo triangulo = new Triangulo(lado1,lado2,lado3);
+
+            Triangulo triangulo = Triangulo.defineTipo(lado1,lado2,lado3);
             Triangulo.addLista(triangulo);
-            Triangulo.mostrarLista();
+
 
         }
         public static void cadastrarQuadrado(){
@@ -133,12 +134,14 @@ public class  Main {
                     Circulo.mostrarLista();
                     break;
                 case 2:
+                    Triangulo.mostrarLista();
                     break;
                 case 3:
                     Quadrado.mostrarLista();
                     break;
                 case 4:
                     Retangulo.mostrarLista();
+                    break;
                 case 5:
                     FormasGeometricas.mostrarTodos();
                     break;

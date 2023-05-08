@@ -1,10 +1,12 @@
-public class Isoceles extends Triangulo{
+public class Isosceles extends Triangulo{
 
-    public Isoceles(double lado1, double lado2, double lado3) {
+    public Isosceles(double lado1, double lado2, double lado3) {
         super(lado1, lado2, lado3);
+        this.setArea(lado1, lado2, lado3);
+        this.setTipo("isosceles");
 
     }
-    public double calculoIsoceles() {
+    public double setArea(double lado1, double lado2, double lado3) {
         if (lado1 == lado2) {
             double altura = Math.sqrt(lado1 * lado1 - (lado3 * lado3) / 4);
             area = lado3 * altura / 2;

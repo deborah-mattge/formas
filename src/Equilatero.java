@@ -2,6 +2,7 @@ public class Equilatero extends Triangulo{
     public Equilatero(double lado1) {
         super(lado1, lado1, lado1);
         this.setArea(lado1);
+       this.setTipo("equilatero");
 
     }
 
