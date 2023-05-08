@@ -1,11 +1,19 @@
-public class Equilatero extends Triangulo {
-    public Equilatero(double lado1, double lado2, double lado3) {
-        super(lado1, lado2, lado3);
+public class Equilatero extends Triangulo{
+    public Equilatero(double lado1) {
+        super(lado1, lado1, lado1);
+        this.calcularArea(lado1);
     }
 
-    public double getArea(double lado1) {
-        double Lado1=lado1;
-        return Math.sqrt(3) / 4 * Math.pow(Lado1, 2);
+
+
+    public double getArea() {
+        return area;
+    }
+    public double calcularArea(double lado1){
+        area = (Math.sqrt(3) / 4) * Math.pow(lado1, 2);
+        return area;
 
     }
+
+
 }

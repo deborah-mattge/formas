@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Triangulo  extends FormasGeometricas{
     private static ArrayList<Triangulo> listaTriangulo=new ArrayList<>();
-    private double lado2,lado3;
+    double lado2,lado3;
     private String tipo;
 
     public Triangulo(double lado1, double lado2, double lado3){
@@ -20,10 +20,12 @@ public class Triangulo  extends FormasGeometricas{
     }
 
     private void setTipo(double lado1, double lado2, double lado3) {
+        System.out.println("foi");
         if (lado1 == lado2 && lado1 == lado3) {
+            System.out.println("oieee");
             this.tipo = "equilátero";
-            Equilatero equilatero = new Equilatero(lado1, lado2, lado3);
-            this.area=equilatero.getArea(lado1);
+            Equilatero equilatero = new Equilatero(lado1);
+            this.area=Equilatero.calcularArea();
 
         }
     }
