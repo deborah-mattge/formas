@@ -80,7 +80,6 @@ public class  Main {
             double diametro = sc.nextDouble();
             Circulo circulo = new Circulo(diametro);
             Circulo.addLista(circulo);
-            System.out.println(circulo.toString());
         }
         public static void cadastroTriangulo(){
             System.out.println("Informe o lado 1 do triangulo: ");

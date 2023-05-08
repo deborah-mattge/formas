@@ -10,7 +10,8 @@ public class Triangulo  extends FormasGeometricas{
         this.lado1=lado1;
         this.lado3=lado3;
         this.setPerimetro(lado1,lado2,lado3);
-        this.setTipo(lado1,lado2,lado3);
+        this.setTipo();
+
 
 
     }
@@ -19,16 +20,37 @@ public class Triangulo  extends FormasGeometricas{
         return tipo;
     }
 
-    private void setTipo(double lado1, double lado2, double lado3) {
-        System.out.println("foi");
+    public void setTipo() {
+       String tipo1= defineTipo(lado1, lado2,lado3);
+        this.tipo = tipo1;
+    }
+
+    private String  defineTipo(double lado1, double lado2, double lado3) {
         if (lado1 == lado2 && lado1 == lado3) {
-            System.out.println("oieee");
-            this.tipo = "equilátero";
-            Equilatero equilatero = new Equilatero(lado1);
-            this.area=Equilatero.calcularArea();
+            tipo = "equilátero";
+            equilatero();
+        }else if(lado1!=lado2 && lado2!=lado3 && lado1!=lado3){
+            tipo="escaleno";
+
+        }else if(lado1==lado2 && lado1!=lado3 || lado1==lado3 && lado1!=lado2 || lado2==lado3 && lado3!=lado2){
+            tipo="isosceles";
+            isoceles();
+
 
         }
+        return tipo;
     }
+    private void equilatero(){
+        Equilatero equilatero = new Equilatero(lado1);
+        this.area=equilatero.getArea();
+
+    }
+    private void isoceles(){
+        Isoceles isoceles = new Isoceles(lado1, lado2, lado3);
+        this.area=isoceles.calculoIsoceles();
+
+    }
+
         private void setPerimetro(double lado1, double lado2, double lado3){
         this.perimetro=lado1+lado2+lado3;
 
