@@ -88,11 +88,12 @@ public class  Main {
             double lado2= sc.nextDouble();
             System.out.println("Informe o lado 3 do triangulo: ");
             double lado3= sc.nextDouble();
-
-            Triangulo triangulo = Triangulo.defineTipo(lado1,lado2,lado3);
-            Triangulo.addLista(triangulo);
-
-
+            if ((lado1 + lado2 > lado3) && (lado2 + lado3 > lado1) && (lado1 + lado3 > lado2)) {
+                Triangulo triangulo = Triangulo.defineTipo(lado1,lado2,lado3);
+                Triangulo.addLista(triangulo);
+            } else {
+                System.out.println("Os valores não formam um triângulo.");
+            }
         }
         public static void cadastrarQuadrado(){
             System.out.println("Informe o lado do quadrado: ");
