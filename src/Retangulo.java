@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Retangulo extends FormasGeometricas {
-    private static ArrayList<Retangulo> listaRetangulo=new ArrayList<Retangulo>();
      private double lado2;
 
      public Retangulo(double lado1, double lado2){
@@ -22,8 +21,8 @@ public class Retangulo extends FormasGeometricas {
         this.perimetro=2*(lado1+lado2);
     }
     public static void addLista(Retangulo retangulo){
-         listaRetangulo.add(retangulo);
-         listaFormas.addAll(listaRetangulo);
+        FormasGeometricas.adicionarForma(retangulo);
+
 
     }
     public static void mostrarLista() {

@@ -76,10 +76,10 @@ public class  Main {
 
         }
         public static void cadastroCirculo(){
-            System.out.println("Informe o diametro: ");
-            double diametro = sc.nextDouble();
-            Circulo circulo = new Circulo(diametro);
-            Circulo.addLista(circulo);
+            System.out.println("Informe o raio: ");
+            double raio = sc.nextDouble();
+            FormasGeometricas forma= new Circulo(raio);
+
         }
         public static void cadastroTriangulo(){
             System.out.println("Informe o lado 1 do triangulo: ");

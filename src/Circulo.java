@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 
 public class Circulo extends FormasGeometricas {
-    private static ArrayList<Circulo> listaCirculo = new ArrayList<>();
+
     private double diametro;
     private double  raio;
 
 
-    public Circulo( double diametro){
-        this.diametro = diametro;
-        this.setPerimetro(diametro);
-        this.setArea(diametro);
-        this.setRaio(diametro);
+    public Circulo( double raio){
+        this.diametro = raio*2;
+        this.setPerimetro(raio);
+        this.setArea(raio);
+        this.setRaio(raio);
+        FormasGeometricas.adicionarForma(this);
+
 
 
     }
@@ -18,42 +20,34 @@ public class Circulo extends FormasGeometricas {
     public double getPerimetro() {
         return perimetro;
     }
-    private void setPerimetro(double diametro){
-        this.perimetro=3.14*diametro;
+    private void setPerimetro(double raio){
+        this.perimetro=3.14*2*raio;
     }
     public double getRaio(){
         return this.raio;
     }
 
-    private void setRaio(double diametro) {
-        this.raio = diametro/2;
+    private void setRaio(double raio) {
+        this.raio =raio;
     }
 
     public double getArea() {
         return area;
     }
-    private void setArea(double diametro) {
-        raio=diametro/2;
+    private void setArea(double raio) {
         this.area = 3.14*raio*raio;
     }
-    public static void addLista(Circulo circulo){
-        listaCirculo.add(circulo);
-       listaFormas.addAll(listaCirculo);
-    }
-    public static void mostrarLista(){
-        for (Circulo circ : listaCirculo) {
-            System.out.println(circ.toString());
-        }
-    }
+
+
 
 
     @Override
     public String toString() {
         return "Circulo{" +
-                ", diametro=" + diametro +
-                ", raio=" + raio +
-                ", perimetro=" + perimetro +
-                ", area=" + area +
+                ", diametro=" + raio*2 +
+                ", raio=" + getRaio() +
+                ", perimetro=" + getPerimetro() +
+                ", area=" + getArea() +
                 '}';
     }
 }

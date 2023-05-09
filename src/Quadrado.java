@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Quadrado extends FormasGeometricas {
 
-    private static ArrayList<Quadrado> listaQuadrado = new ArrayList<>();
+
 
 
 
@@ -27,8 +27,7 @@ public class Quadrado extends FormasGeometricas {
         this.area=lado*lado;
     }
     public static void addLista(Quadrado quadrado){
-        listaQuadrado.add(quadrado);
-        listaFormas.addAll(listaQuadrado);
+       FormasGeometricas.adicionarForma(quadrado);
 
     }
     public static void mostrarLista(){

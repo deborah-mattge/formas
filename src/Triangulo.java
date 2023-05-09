@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Triangulo  extends FormasGeometricas{
-    private static ArrayList<Triangulo> listaTriangulo=new ArrayList<>();
+
     double lado2,lado3;
     private String tipo;
 
@@ -44,7 +44,7 @@ public class Triangulo  extends FormasGeometricas{
         }
 
         public static void addLista(Triangulo triangulo){
-        listaTriangulo.add(triangulo);
+       FormasGeometricas.listaFormas.add(triangulo);
         }
         public static void mostrarLista(){
             for (Triangulo trig : listaTriangulo) {
