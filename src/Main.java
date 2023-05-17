@@ -6,6 +6,10 @@ public class  Main {
     public static void main(String[] args) {
         add();
         telaInicial();
+//     FormasGeometricas forma1 =new FormasGeometricas();
+//        FormasGeometricas forma2 =new Quadrado(1);
+//        Quadrado forma3 =new Quadrado(2);
+//        Quadrado  quadrado =(Quadrado) forma2;/
 
 
     }
@@ -89,8 +93,8 @@ public class  Main {
             System.out.println("Informe o lado 3 do triangulo: ");
             double lado3= sc.nextDouble();
             if ((lado1 + lado2 > lado3) && (lado2 + lado3 > lado1) && (lado1 + lado3 > lado2)) {
-                Triangulo triangulo = Triangulo.defineTipo(lado1,lado2,lado3);
-                Triangulo.addLista(triangulo);
+                Triangulo.defineTipo(lado1,lado2,lado3);
+
             } else {
                 System.out.println("Os valores não formam um triângulo.");
             }
@@ -100,7 +104,7 @@ public class  Main {
             double lado= sc.nextDouble();
             Quadrado quadrado = new Quadrado(lado);
             Quadrado.addLista(quadrado);
-            Quadrado.mostrarLista();
+
 
 
         }
@@ -112,7 +116,7 @@ public class  Main {
         if(lado1!=lado2){
             Retangulo retangulo=new Retangulo(lado1, lado2);
             Retangulo.addLista(retangulo);
-            Retangulo.mostrarLista();
+
         }else{
             System.out.println("forma inválida");
             }
@@ -130,18 +134,19 @@ public class  Main {
                     6- voltar 
                     """);
             int opcao = sc.nextInt();
+
             switch (opcao){
                 case 1:
-                    Circulo.mostrarLista();
+                   FormasGeometricas.mostrarCirculo();
                     break;
                 case 2:
-                    Triangulo.mostrarLista();
+                  FormasGeometricas.mostrarTriangulo();
                     break;
                 case 3:
-                    Quadrado.mostrarLista();
+                    FormasGeometricas.mostrarQuadrado();
                     break;
                 case 4:
-                    Retangulo.mostrarLista();
+                  FormasGeometricas.mostrarRetangulo();
                     break;
                 case 5:
                     FormasGeometricas.mostrarTodos();
