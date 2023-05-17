@@ -6,29 +6,25 @@ public class Retangulo extends FormasGeometricas {
      public Retangulo(double lado1, double lado2){
          this.lado1=lado1;
          this.lado2=lado2;
-         this.setArea(lado1,lado2);
-         this.setPerimetro(lado1,lado2);
+         this.setArea();
+         this.setPerimetro();
+         FormasGeometricas.adicionarForma(this);
 
 
      }
      public double getArea(){
          return area;
      }
-     private void setArea(double lado1,double lado2){
+     public void setArea(){
          this.area=lado1*lado2;
      }
-    private void setPerimetro(double lado1,double lado2){
+    public void setPerimetro(){
         this.perimetro=2*(lado1+lado2);
     }
     public static void addLista(Retangulo retangulo){
         FormasGeometricas.adicionarForma(retangulo);
 
 
-    }
-    public static void mostrarLista() {
-        for (Retangulo ret : listaRetangulo) {
-            System.out.println(ret.toString());
-        }
     }
 
     @Override

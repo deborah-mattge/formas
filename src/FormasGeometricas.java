@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class FormasGeometricas {
+public abstract class FormasGeometricas {
      double area;
      double perimetro;
     double lado1;
@@ -22,10 +22,7 @@ public class FormasGeometricas {
      }
 
 
-
-
-
-
-
+  public abstract void setArea();
+  public abstract void setPerimetro();
 
 }

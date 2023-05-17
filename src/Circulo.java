@@ -8,8 +8,8 @@ public class Circulo extends FormasGeometricas {
 
     public Circulo( double raio){
         this.diametro = raio*2;
-        this.setPerimetro(raio);
-        this.setArea(raio);
+        this.setPerimetro();
+        this.setArea();
         this.setRaio(raio);
         FormasGeometricas.adicionarForma(this);
 
@@ -20,8 +20,9 @@ public class Circulo extends FormasGeometricas {
     public double getPerimetro() {
         return perimetro;
     }
-    private void setPerimetro(double raio){
+    public void setPerimetro(){
         this.perimetro=3.14*2*raio;
+
     }
     public double getRaio(){
         return this.raio;
@@ -34,8 +35,10 @@ public class Circulo extends FormasGeometricas {
     public double getArea() {
         return area;
     }
-    private void setArea(double raio) {
-        this.area = 3.14*raio*raio;
+
+    public void setArea() {
+       this.area = 3.14*raio*raio;
+
     }
 
 

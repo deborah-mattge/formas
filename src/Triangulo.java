@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Triangulo  extends FormasGeometricas{
+public abstract class Triangulo  extends FormasGeometricas{
 
     double lado2,lado3;
     private String tipo;
@@ -9,7 +9,9 @@ public class Triangulo  extends FormasGeometricas{
         this.lado2=lado2;
         this.lado1=lado1;
         this.lado3=lado3;
-        this.setPerimetro(lado1,lado2,lado3);
+        this.setPerimetro();
+        FormasGeometricas.adicionarForma(this);
+
 
 
 
@@ -37,20 +39,13 @@ public class Triangulo  extends FormasGeometricas{
         return null;
     }
 
-        private void setPerimetro(double lado1, double lado2, double lado3){
+
+
+    public void setPerimetro(){
         this.perimetro=lado1+lado2+lado3;
-
-
         }
 
-        public static void addLista(Triangulo triangulo){
-       FormasGeometricas.listaFormas.add(triangulo);
-        }
-        public static void mostrarLista(){
-            for (Triangulo trig : listaTriangulo) {
-                System.out.println(trig.toString());
-            }
-        }
+
     @Override
     public String toString() {
         return "Triangulo{" +

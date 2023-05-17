@@ -8,32 +8,28 @@ public class Quadrado extends FormasGeometricas {
 
     public Quadrado (double lado){
         this.lado1=lado;
-        this.setPerimetro(lado);
-        this.setArea(lado);
+        this.setPerimetro();
+        this.setArea();
+        FormasGeometricas.adicionarForma(this);
 
     }
 
     public double getPerimetro() {
         return perimetro;
     }
-    private void setPerimetro(double lado){
-        this.perimetro=lado*4;
+    public void setPerimetro(){
+        this.perimetro=lado1*4;
     }
 
     public double getArea() {
         return area;
     }
-    private void setArea(double lado){
-        this.area=lado*lado;
+    public void setArea(){
+        this.area=lado1*lado1;
     }
     public static void addLista(Quadrado quadrado){
        FormasGeometricas.adicionarForma(quadrado);
 
-    }
-    public static void mostrarLista(){
-        for (Quadrado quad : listaQuadrado) {
-            System.out.println(quad.toString());
-        }
     }
 
     @Override
