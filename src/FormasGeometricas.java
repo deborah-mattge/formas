@@ -20,6 +20,34 @@ public abstract class FormasGeometricas {
              System.out.println(form.toString());
          }
      }
+    public static void mostrarCirculo(){
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Circulo){
+                System.out.println(forma);
+            }
+        }
+    }
+    public static void mostrarTriangulo(){
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Triangulo){
+                System.out.println(forma);
+            }
+        }
+    }
+    public static void mostrarQuadrado(){
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Quadrado){
+                System.out.println(forma);
+            }
+        }
+    }
+    public static void mostrarRetangulo(){
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Retangulo){
+                System.out.println(forma);
+            }
+        }
+    }
 
 
   public abstract void setArea();

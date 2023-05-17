@@ -32,6 +32,7 @@ public class Quadrado extends FormasGeometricas {
 
     }
 
+
     @Override
     public String toString() {
         return "Quadrado{" +
