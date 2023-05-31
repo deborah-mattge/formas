@@ -9,6 +9,7 @@ public class Escaleno extends Triangulo{
     public double getArea() {
         return area;
     }
+    @Override
     public void setArea(){
         double s = perimetro / 2.0;
         System.out.println(s);

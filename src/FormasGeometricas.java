@@ -14,40 +14,15 @@ public abstract class FormasGeometricas {
         listaFormas.add(forma);
 
     }
+    public static String mostrarObjeto(){
+        String objetos="";
+        for(FormasGeometricas forma : listaFormas){
+            objetos+="\n"+forma+"\n";
+        }
+        return objetos;
+    }
 
-     public static void  mostrarTodos(){
-         for(FormasGeometricas form : listaFormas){
-             System.out.println(form.toString());
-         }
-     }
-    public static void mostrarCirculo(){
-        for(FormasGeometricas forma :listaFormas){
-            if(forma instanceof Circulo){
-                System.out.println(forma);
-            }
-        }
-    }
-    public static void mostrarTriangulo(){
-        for(FormasGeometricas forma :listaFormas){
-            if(forma instanceof Triangulo){
-                System.out.println(forma);
-            }
-        }
-    }
-    public static void mostrarQuadrado(){
-        for(FormasGeometricas forma :listaFormas){
-            if(forma instanceof Quadrado){
-                System.out.println(forma);
-            }
-        }
-    }
-    public static void mostrarRetangulo(){
-        for(FormasGeometricas forma :listaFormas){
-            if(forma instanceof Retangulo){
-                System.out.println(forma);
-            }
-        }
-    }
+
 
 
   public abstract void setArea();

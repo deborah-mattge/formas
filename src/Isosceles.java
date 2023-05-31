@@ -6,6 +6,7 @@ public class Isosceles extends Triangulo{
         super.setTipo("isosceles");
 
     }
+    @Override
     public void setArea() {
         if (lado1 == lado2) {
             double altura = Math.sqrt(lado1 * lado1 - (lado3 * lado3) / 4);

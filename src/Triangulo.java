@@ -40,22 +40,32 @@ public abstract class Triangulo  extends FormasGeometricas{
     }
 
 
-
+    @Override
     public void setPerimetro(){
         this.perimetro=lado1+lado2+lado3;
         }
 
 
+    public static String mostrarObjetos(){
+        String objetos="";
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Triangulo){
+                objetos+=forma;
+            }
+        }
+        return objetos;
+    }
+
+
     @Override
     public String toString() {
-        return "Triangulo{" +
-                "lado1=" + lado1 +
-                "lado2=" + lado2 +
-                "lado3=" + lado3 +
-                ", area=" + area +
-                "tipo=" + tipo +
-                ", perimetro=" + perimetro +
-                '}';
+        return "\nTriangulo" +
+                "\nlado1=" + lado1 +
+                ",lado2=" + lado2 +
+                ",lado3=" + lado3 +
+                "\narea=" + area +
+                "\ntipo=" + tipo +
+                "\nperimetro=" + perimetro;
     }
     }
 

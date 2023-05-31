@@ -103,7 +103,7 @@ public class  Main {
             System.out.println("Informe o lado do quadrado: ");
             double lado= sc.nextDouble();
             Quadrado quadrado = new Quadrado(lado);
-            Quadrado.addLista(quadrado);
+
 
 
 
@@ -115,7 +115,7 @@ public class  Main {
             double lado2= sc.nextDouble();
         if(lado1!=lado2){
             Retangulo retangulo=new Retangulo(lado1, lado2);
-            Retangulo.addLista(retangulo);
+
 
         }else{
             System.out.println("forma inválida");
@@ -123,6 +123,7 @@ public class  Main {
 
         }
         public static void listas(){
+        String objetos=" ";
         do {
             System.out.println("""
                     Informe a lista que deseja vizualizar:
@@ -137,22 +138,29 @@ public class  Main {
 
             switch (opcao){
                 case 1:
-                   FormasGeometricas.mostrarCirculo();
+                    objetos=Circulo.mostrarObjetos();
+                    System.out.println(objetos);
                     break;
                 case 2:
-                  FormasGeometricas.mostrarTriangulo();
+                    objetos=Triangulo.mostrarObjetos();
+                    System.out.println(objetos);
                     break;
+
                 case 3:
-                    FormasGeometricas.mostrarQuadrado();
+                    objetos=Quadrado.mostrarObjetos();
+                    System.out.println(objetos);
                     break;
                 case 4:
-                  FormasGeometricas.mostrarRetangulo();
+                    objetos=Retangulo.mostrarObjetos();
+                    System.out.println(objetos);
                     break;
                 case 5:
-                    FormasGeometricas.mostrarTodos();
+                    objetos=FormasGeometricas.mostrarObjeto();
+                    System.out.println(objetos);
                     break;
                 case 6:
                     return;
+
 
             }
         }while(true);

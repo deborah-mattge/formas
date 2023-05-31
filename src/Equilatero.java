@@ -11,6 +11,9 @@ public class Equilatero extends Triangulo{
     public double getArea() {
         return area;
     }
+
+
+    @Override
     public void setArea(){
         this.area = (Math.sqrt(3) / 4) * Math.pow(lado1, 2);
     }

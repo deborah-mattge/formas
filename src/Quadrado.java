@@ -17,6 +17,7 @@ public class Quadrado extends FormasGeometricas {
     public double getPerimetro() {
         return perimetro;
     }
+    @Override
     public void setPerimetro(){
         this.perimetro=lado1*4;
     }
@@ -24,22 +25,28 @@ public class Quadrado extends FormasGeometricas {
     public double getArea() {
         return area;
     }
+    @Override
     public void setArea(){
         this.area=lado1*lado1;
     }
-    public static void addLista(Quadrado quadrado){
-       FormasGeometricas.adicionarForma(quadrado);
 
+    public static String mostrarObjetos(){
+        String objetos="";
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Quadrado){
+                objetos+=forma+"\n";
+            }
+        }
+        return objetos;
     }
 
 
     @Override
     public String toString() {
-        return "Quadrado{" +
-                "lado=" + lado1 +
-                ", area=" + area +
-                ", perimetro=" + perimetro +
-                '}';
+        return "\nQuadrado" +
+                "\nlado=" + lado1 +
+                "\narea=" + area +
+                "\nperimetro=" + perimetro ;
     }
 }
 

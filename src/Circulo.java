@@ -20,6 +20,7 @@ public class Circulo extends FormasGeometricas {
     public double getPerimetro() {
         return perimetro;
     }
+    @Override
     public void setPerimetro(){
         this.perimetro=3.14*2*raio;
 
@@ -27,6 +28,7 @@ public class Circulo extends FormasGeometricas {
     public double getRaio(){
         return this.raio;
     }
+
 
     private void setRaio(double raio) {
         this.raio =raio;
@@ -36,9 +38,20 @@ public class Circulo extends FormasGeometricas {
         return area;
     }
 
+    @Override
     public void setArea() {
        this.area = 3.14*raio*raio;
 
+    }
+
+    public static String mostrarObjetos(){
+        String objetos="";
+        for(FormasGeometricas forma :listaFormas){
+            if(forma instanceof Circulo){
+                objetos+=forma+"\n";
+            }
+        }
+        return objetos;
     }
 
 
@@ -47,11 +60,10 @@ public class Circulo extends FormasGeometricas {
 
     @Override
     public String toString() {
-        return "Circulo{" +
-                ", diametro=" + raio*2 +
-                ", raio=" + getRaio() +
-                ", perimetro=" + getPerimetro() +
-                ", area=" + getArea() +
-                '}';
+        return "\nCirculo" +
+                "\ndiametro=" + raio*2 +
+                "\nraio=" + getRaio() +
+                "\nperimetro=" + getPerimetro() +
+                "\narea=" + getArea();
     }
 }
